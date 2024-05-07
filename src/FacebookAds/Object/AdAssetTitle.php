@@ -13,7 +13,7 @@ use FacebookAds\ApiRequest;
 use FacebookAds\Cursor;
 use FacebookAds\Http\RequestInterface;
 use FacebookAds\TypeChecker;
-use FacebookAds\Object\Fields\TargetingGeoLocationLocationExpansionFields;
+use FacebookAds\Object\Fields\AdAssetTitleFields;
 
 /**
  * This class is auto-generated.
@@ -24,13 +24,13 @@ use FacebookAds\Object\Fields\TargetingGeoLocationLocationExpansionFields;
  *
  */
 
-class TargetingGeoLocationLocationExpansion extends AbstractObject {
+class AdAssetTitle extends AbstractCrudObject {
 
   /**
-   * @return TargetingGeoLocationLocationExpansionFields
+   * @return AdAssetTitleFields
    */
   public static function getFieldsEnum() {
-    return TargetingGeoLocationLocationExpansionFields::getInstance();
+    return AdAssetTitleFields::getInstance();
   }
 
   protected static function getReferencedEnums() {

@@ -20,15 +20,15 @@ use FacebookAds\Enum\AbstractEnum;
  *
  */
 
-class PageCommerceEligibilityFields extends AbstractEnum {
+class AdAssetCallToActionTypeFields extends AbstractEnum {
 
-  const OFFSITE = 'offsite';
-  const ONSITE = 'onsite';
+  const ID = 'id';
+  const NAME = 'name';
 
   public function getFieldTypes() {
     return array(
-      'offsite' => 'Object',
-      'onsite' => 'Object',
+      'id' => 'string',
+      'name' => 'string',
     );
   }
 }

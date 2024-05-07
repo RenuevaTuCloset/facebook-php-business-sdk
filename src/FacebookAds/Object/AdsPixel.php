@@ -240,29 +240,6 @@ class AdsPixel extends AbstractCrudObject {
     return $pending ? $request : $request->execute();
   }
 
-  public function createMeapitocapiconsolidationhelper(array $fields = array(), array $params = array(), $pending = false) {
-    $this->assureId();
-
-    $param_types = array(
-    );
-    $enums = array(
-    );
-
-    $request = new ApiRequest(
-      $this->api,
-      $this->data['id'],
-      RequestInterface::METHOD_POST,
-      '/meapitocapiconsolidationhelper',
-      new AbstractCrudObject(),
-      'EDGE',
-      array(),
-      new TypeChecker($param_types, $enums)
-    );
-    $request->addParams($params);
-    $request->addFields($fields);
-    return $pending ? $request : $request->execute();
-  }
-
   public function getOfflineEventUploads(array $fields = array(), array $params = array(), $pending = false) {
     $this->assureId();
 
@@ -458,29 +435,6 @@ class AdsPixel extends AbstractCrudObject {
       new AdsPixelStatsResult(),
       'EDGE',
       AdsPixelStatsResult::getFieldsEnum()->getValues(),
-      new TypeChecker($param_types, $enums)
-    );
-    $request->addParams($params);
-    $request->addFields($fields);
-    return $pending ? $request : $request->execute();
-  }
-
-  public function createTelemetry(array $fields = array(), array $params = array(), $pending = false) {
-    $this->assureId();
-
-    $param_types = array(
-    );
-    $enums = array(
-    );
-
-    $request = new ApiRequest(
-      $this->api,
-      $this->data['id'],
-      RequestInterface::METHOD_POST,
-      '/telemetry',
-      new AbstractCrudObject(),
-      'EDGE',
-      array(),
       new TypeChecker($param_types, $enums)
     );
     $request->addParams($params);

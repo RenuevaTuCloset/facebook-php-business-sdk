@@ -13,7 +13,7 @@ use FacebookAds\ApiRequest;
 use FacebookAds\Cursor;
 use FacebookAds\Http\RequestInterface;
 use FacebookAds\TypeChecker;
-use FacebookAds\Object\Fields\PageCommerceEligibilityFields;
+use FacebookAds\Object\Fields\AdAssetLinkURLFields;
 
 /**
  * This class is auto-generated.
@@ -24,13 +24,13 @@ use FacebookAds\Object\Fields\PageCommerceEligibilityFields;
  *
  */
 
-class PageCommerceEligibility extends AbstractObject {
+class AdAssetLinkURL extends AbstractCrudObject {
 
   /**
-   * @return PageCommerceEligibilityFields
+   * @return AdAssetLinkURLFields
    */
   public static function getFieldsEnum() {
-    return PageCommerceEligibilityFields::getInstance();
+    return AdAssetLinkURLFields::getInstance();
   }
 
   protected static function getReferencedEnums() {

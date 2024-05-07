@@ -20,13 +20,25 @@ use FacebookAds\Enum\AbstractEnum;
  *
  */
 
-class TargetingGeoLocationLocationExpansionFields extends AbstractEnum {
+class AdCreativePromotionMetadataSpecFields extends AbstractEnum {
 
-  const ALLOWED = 'allowed';
+  const END_DATE = 'end_date';
+  const ID = 'id';
+  const PROMOTION_SOURCE = 'promotion_source';
+  const PROMOTION_TYPE = 'promotion_type';
+  const PROMOTION_VALUE = 'promotion_value';
+  const REQUIRED_CODE = 'required_code';
+  const START_DATE = 'start_date';
 
   public function getFieldTypes() {
     return array(
-      'allowed' => 'bool',
+      'end_date' => 'datetime',
+      'id' => 'string',
+      'promotion_source' => 'string',
+      'promotion_type' => 'string',
+      'promotion_value' => 'float',
+      'required_code' => 'string',
+      'start_date' => 'datetime',
     );
   }
 }

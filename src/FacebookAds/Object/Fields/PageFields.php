@@ -29,6 +29,7 @@ class PageFields extends AbstractEnum {
   const APP_ID = 'app_id';
   const ARTISTS_WE_LIKE = 'artists_we_like';
   const ATTIRE = 'attire';
+  const AVAILABLE_PROMO_OFFER_IDS = 'available_promo_offer_ids';
   const AWARDS = 'awards';
   const BAND_INTERESTS = 'band_interests';
   const BAND_MEMBERS = 'band_members';
@@ -36,6 +37,7 @@ class PageFields extends AbstractEnum {
   const BIO = 'bio';
   const BIRTHDAY = 'birthday';
   const BOOKING_AGENT = 'booking_agent';
+  const BREAKING_NEWS_USAGE = 'breaking_news_usage';
   const BUILT = 'built';
   const BUSINESS = 'business';
   const CAN_CHECKIN = 'can_checkin';
@@ -77,7 +79,6 @@ class PageFields extends AbstractEnum {
   const HAS_LEAD_ACCESS = 'has_lead_access';
   const HAS_TRANSITIONED_TO_NEW_PAGE_EXPERIENCE = 'has_transitioned_to_new_page_experience';
   const HAS_WHATSAPP_BUSINESS_NUMBER = 'has_whatsapp_business_number';
-  const HAS_WHATSAPP_ENTERPRISE_NUMBER_USING_CLOUD_API = 'has_whatsapp_enterprise_number_using_cloud_api';
   const HAS_WHATSAPP_NUMBER = 'has_whatsapp_number';
   const HOMETOWN = 'hometown';
   const HOURS = 'hours';
@@ -90,6 +91,7 @@ class PageFields extends AbstractEnum {
   const IS_COMMUNITY_PAGE = 'is_community_page';
   const IS_ELIGIBLE_FOR_BRANDED_CONTENT = 'is_eligible_for_branded_content';
   const IS_ELIGIBLE_FOR_DISABLE_CONNECT_IG_BTN_FOR_NON_PAGE_ADMIN_AM_WEB = 'is_eligible_for_disable_connect_ig_btn_for_non_page_admin_am_web';
+  const IS_ELIGIBLE_FOR_LIVE_BOOSTING_EXPANSION = 'is_eligible_for_live_boosting_expansion';
   const IS_MESSENGER_BOT_GET_STARTED_ENABLED = 'is_messenger_bot_get_started_enabled';
   const IS_MESSENGER_PLATFORM_BOT = 'is_messenger_platform_bot';
   const IS_OWNED = 'is_owned';
@@ -121,7 +123,6 @@ class PageFields extends AbstractEnum {
   const OFFER_ELIGIBLE = 'offer_eligible';
   const OVERALL_STAR_RATING = 'overall_star_rating';
   const OWNER_BUSINESS = 'owner_business';
-  const PAGE_ABOUT_STORY = 'page_about_story';
   const PAGE_TOKEN = 'page_token';
   const PARENT_PAGE = 'parent_page';
   const PARKING = 'parking';
@@ -182,6 +183,7 @@ class PageFields extends AbstractEnum {
       'app_id' => 'string',
       'artists_we_like' => 'string',
       'attire' => 'string',
+      'available_promo_offer_ids' => 'list<map<string, list<map<string, string>>>>',
       'awards' => 'string',
       'band_interests' => 'string',
       'band_members' => 'string',
@@ -189,6 +191,7 @@ class PageFields extends AbstractEnum {
       'bio' => 'string',
       'birthday' => 'string',
       'booking_agent' => 'string',
+      'breaking_news_usage' => 'Object',
       'built' => 'string',
       'business' => 'Object',
       'can_checkin' => 'bool',
@@ -230,7 +233,6 @@ class PageFields extends AbstractEnum {
       'has_lead_access' => 'HasLeadAccess',
       'has_transitioned_to_new_page_experience' => 'bool',
       'has_whatsapp_business_number' => 'bool',
-      'has_whatsapp_enterprise_number_using_cloud_api' => 'bool',
       'has_whatsapp_number' => 'bool',
       'hometown' => 'string',
       'hours' => 'map<string, string>',
@@ -243,6 +245,7 @@ class PageFields extends AbstractEnum {
       'is_community_page' => 'bool',
       'is_eligible_for_branded_content' => 'bool',
       'is_eligible_for_disable_connect_ig_btn_for_non_page_admin_am_web' => 'bool',
+      'is_eligible_for_live_boosting_expansion' => 'bool',
       'is_messenger_bot_get_started_enabled' => 'bool',
       'is_messenger_platform_bot' => 'bool',
       'is_owned' => 'bool',
@@ -274,7 +277,6 @@ class PageFields extends AbstractEnum {
       'offer_eligible' => 'bool',
       'overall_star_rating' => 'float',
       'owner_business' => 'Business',
-      'page_about_story' => 'PageAboutStory',
       'page_token' => 'string',
       'parent_page' => 'Page',
       'parking' => 'PageParking',
