@@ -28,6 +28,7 @@ class AdAssetFeedSpecFields extends AbstractEnum {
   const ASSET_CUSTOMIZATION_RULES = 'asset_customization_rules';
   const AUTOTRANSLATE = 'autotranslate';
   const BODIES = 'bodies';
+  const CALL_ADS_CONFIGURATION = 'call_ads_configuration';
   const CALL_TO_ACTION_TYPES = 'call_to_action_types';
   const CALL_TO_ACTIONS = 'call_to_actions';
   const CAPTIONS = 'captions';
@@ -44,6 +45,7 @@ class AdAssetFeedSpecFields extends AbstractEnum {
   const REASONS_TO_SHOP = 'reasons_to_shop';
   const SHOPS_BUNDLE = 'shops_bundle';
   const TITLES = 'titles';
+  const UPCOMING_EVENTS = 'upcoming_events';
   const VIDEOS = 'videos';
 
   public function getFieldTypes() {
@@ -54,6 +56,7 @@ class AdAssetFeedSpecFields extends AbstractEnum {
       'asset_customization_rules' => 'list<AdAssetFeedSpecAssetCustomizationRule>',
       'autotranslate' => 'list<string>',
       'bodies' => 'list<AdAssetFeedSpecBody>',
+      'call_ads_configuration' => 'Object',
       'call_to_action_types' => 'list<CallToActionTypes>',
       'call_to_actions' => 'list<AdAssetFeedSpecCallToAction>',
       'captions' => 'list<AdAssetFeedSpecCaption>',
@@ -70,6 +73,7 @@ class AdAssetFeedSpecFields extends AbstractEnum {
       'reasons_to_shop' => 'bool',
       'shops_bundle' => 'bool',
       'titles' => 'list<AdAssetFeedSpecTitle>',
+      'upcoming_events' => 'list<Object>',
       'videos' => 'list<AdAssetFeedSpecVideo>',
     );
   }

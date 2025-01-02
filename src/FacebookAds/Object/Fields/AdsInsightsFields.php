@@ -40,6 +40,7 @@ class AdsInsightsFields extends AbstractEnum {
   const AUCTION_BID = 'auction_bid';
   const AUCTION_COMPETITIVENESS = 'auction_competitiveness';
   const AUCTION_MAX_COMPETITOR_BID = 'auction_max_competitor_bid';
+  const AVERAGE_PURCHASES_CONVERSION_VALUE = 'average_purchases_conversion_value';
   const BUYING_TYPE = 'buying_type';
   const CAMPAIGN_ID = 'campaign_id';
   const CAMPAIGN_NAME = 'campaign_name';
@@ -51,7 +52,6 @@ class AdsInsightsFields extends AbstractEnum {
   const CATALOG_SEGMENT_VALUE_OMNI_PURCHASE_ROAS = 'catalog_segment_value_omni_purchase_roas';
   const CATALOG_SEGMENT_VALUE_WEBSITE_PURCHASE_ROAS = 'catalog_segment_value_website_purchase_roas';
   const CLICKS = 'clicks';
-  const CONVERSION_LEAD_RATE = 'conversion_lead_rate';
   const CONVERSION_RATE_RANKING = 'conversion_rate_ranking';
   const CONVERSION_VALUES = 'conversion_values';
   const CONVERSIONS = 'conversions';
@@ -62,7 +62,6 @@ class AdsInsightsFields extends AbstractEnum {
   const COST_PER_ACTION_TYPE = 'cost_per_action_type';
   const COST_PER_AD_CLICK = 'cost_per_ad_click';
   const COST_PER_CONVERSION = 'cost_per_conversion';
-  const COST_PER_CONVERSION_LEAD = 'cost_per_conversion_lead';
   const COST_PER_DDA_COUNTBY_CONVS = 'cost_per_dda_countby_convs';
   const COST_PER_ESTIMATED_AD_RECALLERS = 'cost_per_estimated_ad_recallers';
   const COST_PER_INLINE_LINK_CLICK = 'cost_per_inline_link_click';
@@ -109,10 +108,17 @@ class AdsInsightsFields extends AbstractEnum {
   const LOCATION = 'location';
   const MARKETING_MESSAGES_COST_PER_DELIVERED = 'marketing_messages_cost_per_delivered';
   const MARKETING_MESSAGES_COST_PER_LINK_BTN_CLICK = 'marketing_messages_cost_per_link_btn_click';
+  const MARKETING_MESSAGES_DELIVERY_RATE = 'marketing_messages_delivery_rate';
+  const MARKETING_MESSAGES_LINK_BTN_CLICK_RATE = 'marketing_messages_link_btn_click_rate';
+  const MARKETING_MESSAGES_MEDIA_VIEW_RATE = 'marketing_messages_media_view_rate';
+  const MARKETING_MESSAGES_PHONE_CALL_BTN_CLICK_RATE = 'marketing_messages_phone_call_btn_click_rate';
+  const MARKETING_MESSAGES_QUICK_REPLY_BTN_CLICK_RATE = 'marketing_messages_quick_reply_btn_click_rate';
+  const MARKETING_MESSAGES_READ_RATE = 'marketing_messages_read_rate';
   const MARKETING_MESSAGES_SPEND = 'marketing_messages_spend';
   const MARKETING_MESSAGES_WEBSITE_PURCHASE_VALUES = 'marketing_messages_website_purchase_values';
   const MOBILE_APP_PURCHASE_ROAS = 'mobile_app_purchase_roas';
   const OBJECTIVE = 'objective';
+  const ONSITE_CONVERSION_MESSAGING_DETECTED_PURCHASE_DEDUPED = 'onsite_conversion_messaging_detected_purchase_deduped';
   const OPTIMIZATION_GOAL = 'optimization_goal';
   const OUTBOUND_CLICKS = 'outbound_clicks';
   const OUTBOUND_CLICKS_CTR = 'outbound_clicks_ctr';
@@ -121,6 +127,7 @@ class AdsInsightsFields extends AbstractEnum {
   const QUALIFYING_QUESTION_QUALIFY_ANSWER_RATE = 'qualifying_question_qualify_answer_rate';
   const QUALITY_RANKING = 'quality_ranking';
   const REACH = 'reach';
+  const SHOPS_ASSISTED_PURCHASES = 'shops_assisted_purchases';
   const SOCIAL_SPEND = 'social_spend';
   const SPEND = 'spend';
   const TOTAL_POSTBACKS = 'total_postbacks';
@@ -178,6 +185,7 @@ class AdsInsightsFields extends AbstractEnum {
       'auction_bid' => 'string',
       'auction_competitiveness' => 'string',
       'auction_max_competitor_bid' => 'string',
+      'average_purchases_conversion_value' => 'list<AdsActionStats>',
       'buying_type' => 'string',
       'campaign_id' => 'string',
       'campaign_name' => 'string',
@@ -189,7 +197,6 @@ class AdsInsightsFields extends AbstractEnum {
       'catalog_segment_value_omni_purchase_roas' => 'list<AdsActionStats>',
       'catalog_segment_value_website_purchase_roas' => 'list<AdsActionStats>',
       'clicks' => 'string',
-      'conversion_lead_rate' => 'string',
       'conversion_rate_ranking' => 'string',
       'conversion_values' => 'list<AdsActionStats>',
       'conversions' => 'list<AdsActionStats>',
@@ -200,7 +207,6 @@ class AdsInsightsFields extends AbstractEnum {
       'cost_per_action_type' => 'list<AdsActionStats>',
       'cost_per_ad_click' => 'list<AdsActionStats>',
       'cost_per_conversion' => 'list<AdsActionStats>',
-      'cost_per_conversion_lead' => 'string',
       'cost_per_dda_countby_convs' => 'string',
       'cost_per_estimated_ad_recallers' => 'string',
       'cost_per_inline_link_click' => 'string',
@@ -247,10 +253,17 @@ class AdsInsightsFields extends AbstractEnum {
       'location' => 'string',
       'marketing_messages_cost_per_delivered' => 'string',
       'marketing_messages_cost_per_link_btn_click' => 'string',
+      'marketing_messages_delivery_rate' => 'string',
+      'marketing_messages_link_btn_click_rate' => 'string',
+      'marketing_messages_media_view_rate' => 'string',
+      'marketing_messages_phone_call_btn_click_rate' => 'string',
+      'marketing_messages_quick_reply_btn_click_rate' => 'string',
+      'marketing_messages_read_rate' => 'string',
       'marketing_messages_spend' => 'string',
       'marketing_messages_website_purchase_values' => 'string',
       'mobile_app_purchase_roas' => 'list<AdsActionStats>',
       'objective' => 'string',
+      'onsite_conversion_messaging_detected_purchase_deduped' => 'list<AdsActionStats>',
       'optimization_goal' => 'string',
       'outbound_clicks' => 'list<AdsActionStats>',
       'outbound_clicks_ctr' => 'list<AdsActionStats>',
@@ -259,6 +272,7 @@ class AdsInsightsFields extends AbstractEnum {
       'qualifying_question_qualify_answer_rate' => 'string',
       'quality_ranking' => 'string',
       'reach' => 'string',
+      'shops_assisted_purchases' => 'string',
       'social_spend' => 'string',
       'spend' => 'string',
       'total_postbacks' => 'string',

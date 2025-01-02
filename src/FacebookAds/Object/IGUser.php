@@ -95,6 +95,7 @@ class IGUser extends AbstractCrudObject {
 
     $param_types = array(
       'creator_instagram_account' => 'string',
+      'creator_instagram_username' => 'string',
       'revoke' => 'bool',
     );
     $enums = array(
@@ -119,6 +120,7 @@ class IGUser extends AbstractCrudObject {
     $this->assureId();
 
     $param_types = array(
+      'ad_code' => 'string',
       'creator_username' => 'string',
       'only_fetch_allowlisted' => 'bool',
       'permalinks' => 'list<string>',
@@ -274,6 +276,30 @@ class IGUser extends AbstractCrudObject {
       $this->api,
       $this->data['id'],
       RequestInterface::METHOD_GET,
+      '/dataset',
+      new Dataset(),
+      'EDGE',
+      Dataset::getFieldsEnum()->getValues(),
+      new TypeChecker($param_types, $enums)
+    );
+    $request->addParams($params);
+    $request->addFields($fields);
+    return $pending ? $request : $request->execute();
+  }
+
+  public function createDataset(array $fields = array(), array $params = array(), $pending = false) {
+    $this->assureId();
+
+    $param_types = array(
+      'dataset_name' => 'string',
+    );
+    $enums = array(
+    );
+
+    $request = new ApiRequest(
+      $this->api,
+      $this->data['id'],
+      RequestInterface::METHOD_POST,
       '/dataset',
       new Dataset(),
       'EDGE',
@@ -592,6 +618,48 @@ class IGUser extends AbstractCrudObject {
       new IGMedia(),
       'EDGE',
       IGMedia::getFieldsEnum()->getValues(),
+      new TypeChecker($param_types, $enums)
+    );
+    $request->addParams($params);
+    $request->addFields($fields);
+    return $pending ? $request : $request->execute();
+  }
+
+  public function createUpcomingEvent(array $fields = array(), array $params = array(), $pending = false) {
+    $this->assureId();
+
+    $param_types = array(
+      'end_time' => 'datetime',
+      'notification_subtypes' => 'list<notification_subtypes_enum>',
+      'start_time' => 'datetime',
+      'title' => 'string',
+    );
+    $enums = array(
+      'notification_subtypes_enum' => array(
+        'AFTER_EVENT_1DAY',
+        'AFTER_EVENT_2DAY',
+        'AFTER_EVENT_3DAY',
+        'AFTER_EVENT_4DAY',
+        'AFTER_EVENT_5DAY',
+        'AFTER_EVENT_6DAY',
+        'AFTER_EVENT_7DAY',
+        'BEFORE_EVENT_15MIN',
+        'BEFORE_EVENT_1DAY',
+        'BEFORE_EVENT_1HOUR',
+        'BEFORE_EVENT_2DAY',
+        'EVENT_START',
+        'RESCHEDULED',
+      ),
+    );
+
+    $request = new ApiRequest(
+      $this->api,
+      $this->data['id'],
+      RequestInterface::METHOD_POST,
+      '/upcoming_events',
+      new AbstractCrudObject(),
+      'EDGE',
+      array(),
       new TypeChecker($param_types, $enums)
     );
     $request->addParams($params);
